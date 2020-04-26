@@ -19,8 +19,9 @@ You can add or not the `.md` extension in the link.
 1. Run `composer require interart/markdownwiki` (or `composer update` to get latest library version).
 2. Copy the `index.php` and `.htaccess` files (from `example` folder) to your root www folder.
 3. Edit `index.php` file: 
+    * Set path to `vendor/autoload.php`
     * Change the application title (MD_NAME var)
-    * Set path to `vendor/autoload.php`.
+    * Check ROOT_CONTENTS var path and change it, if needed
 
 ## Creating Content
 
