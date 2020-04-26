@@ -34,6 +34,10 @@ Then, link it from any page.
 * PHP 7.x
 * <a href="https://github.com/erusev/parsedown" target="_blank">Parsedown</a> 1.7 (Markdown parser in PHP)
 
+## Roadmap
+
+* Create web interface to create and edit contents
+
 <hr>
 
 &copy;2020 [Interart Tecnologia](https://www.interart.com)
