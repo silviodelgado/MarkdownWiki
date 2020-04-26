@@ -16,7 +16,7 @@ You can add or not the `.md` extension in the link.
 
 ## Installing
 
-1. Run `composer require silviodelgado/markdownwiki` (or `composer update` to get latest library version).
+1. Run `composer require interart/markdownwiki` (or `composer update` to get latest library version).
 2. Copy the `index.php` and `.htaccess` files (from `example` folder) to your root www folder.
 3. Edit `index.php` file: 
     * Change the application title (MD_NAME var)
