@@ -21,18 +21,19 @@
 <body>
     <header>
         <div class="container">
-            <img src="/assets/img/logo-wiki.png" alt="Markdown Wiki">
+            <img src="/assets/img/logo-wiki.png" alt="<?php echo MD_NAME ?>">
         </div>
     </header>
     <main>
         <div class="container">
             <?php
-            echo $htmlContents;
+            echo $wikiContents;
             ?>
         </div>
         </main>
     <footer>
         <div class="container">
+            [ <a href="/">Back</a> ]
             <div class="text-muted">
                 &copy;2020 <a href="https://www.interart.com" target="_blank">Interart Tecnologia</a> - All righs reserved
             </div>

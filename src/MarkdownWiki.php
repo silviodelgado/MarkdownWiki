@@ -2,6 +2,8 @@
 
 namespace Interart\MarkdownWiki;
 
+use Exception;
+
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
@@ -11,15 +13,21 @@ class MarkdownWiki
     private $slug;
     private $md_path;
     private $content_path;
+    private $template;
 
-    public static function init($contentPath)
+    public static function init($contentPath, $template = null)
     {
-        new MarkdownWiki($contentPath);
+        new MarkdownWiki($contentPath, $template);
     }
 
-    protected function __construct($contentPath)
+    protected function __construct($contentPath, $template)
     {
         $this->content_path = $contentPath;
+        $this->template = $template ?? dirname(__FILE__) . DS . 'default-template.php';
+        if (!file_exists($this->template)) {
+            throw new \Exception("Template file not found.");
+        }
+        
         $this->init_slug();
         $this->show_contents();
     }
@@ -49,8 +57,8 @@ class MarkdownWiki
         $mdContent = file_get_contents($this->md_path);
 
         $parser = new \Parsedown();
-        $htmlContents = $parser->text($mdContent);
+        $wikiContents = $parser->text($mdContent);
 
-        include dirname(__FILE__) . DS . 'main-template.php';
+        include $this->template;
     }
 }
