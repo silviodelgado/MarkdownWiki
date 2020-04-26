@@ -2,21 +2,24 @@
 
 namespace Interart\MarkdownWiki;
 
-define('DS', DIRECTORY_SEPARATOR);
-define('ROOT_CONTENTS', dirname(__DIR__) . DS . 'contents' . DS);
+if (!defined('DS')) {
+    define('DS', DIRECTORY_SEPARATOR);
+}
 
 class MarkdownWiki
 {
     private $slug;
     private $md_path;
+    private $content_path;
 
-    public static function init()
+    public static function init($contentPath)
     {
-        new MarkdownWiki();
+        new MarkdownWiki($contentPath);
     }
 
-    protected function __construct()
+    protected function __construct($contentPath)
     {
+        $this->content_path = $contentPath;
         $this->init_slug();
         $this->show_contents();
     }
@@ -29,7 +32,7 @@ class MarkdownWiki
             $this->slug = 'Main';
         }
         
-        $this->md_path = ROOT_CONTENTS . $this->slug . '.md';
+        $this->md_path = $this->content_path . $this->slug . '.md';
         if (!file_exists($this->md_path)) {
             header("HTTP/1.0 404 Not Found");
             die;
