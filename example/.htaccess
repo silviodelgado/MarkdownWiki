@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+ErrorDocument 404 /404.php
+
+RewriteRule ^w/(.*)?/?$ index.php?slug=$1 [L]
+
+RewriteRule ^([a-z,0-9,A-Z,_-]+)/?$ $1.php
+RewriteRule ^.$ index.php

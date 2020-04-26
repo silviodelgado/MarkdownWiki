@@ -1,0 +1,20 @@
+{
+    "name": "interart/markdownwiki",
+    "description": "Lightweight Wiki using Markdown markup language, file storage and and PHP.",
+    "type": "project",
+    "authors": [{
+        "name": "Silvio Delgado",
+        "email": "silviomdelgado@gmail.com",
+        "homepage": "https://www.silviodelgado.net",
+        "role": "Developer"
+    }],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Interart\\MarkdownWiki\\": "src"
+        }
+    },
+    "require": {
+        "erusev/parsedown": "^1.7"
+    }
+}
