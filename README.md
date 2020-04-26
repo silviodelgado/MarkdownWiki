@@ -2,7 +2,7 @@
 
 # Markdown Wiki
 
-A Lightweight Wiki using Markdown markup language, file storage and and PHP.
+A Lightweight Wiki using Markdown markup language, file storage and PHP.
 
 This is your best choice to create online guides for applications.
 
