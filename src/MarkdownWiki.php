@@ -42,15 +42,15 @@ class MarkdownWiki
             $this->slug = 'Main';
         }
 
+        if (substr($this->slug, -3) == '.md') {
+            header("Location: " . $this->web_path . "/" . substr($this->slug, 0, -3));
+            exit;
+        }
+
         $this->md_path = $this->content_path . $this->slug . '.md';
         if (!file_exists($this->md_path)) {
             header("HTTP/1.0 404 Not Found");
             die;
-        }
-
-        if (substr($this->slug, -3) == '.md') {
-            header("Location: " . $this->web_path . "/" . substr($this->slug, 0, -3));
-            exit;
         }
     }
 

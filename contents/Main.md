@@ -4,7 +4,8 @@ A Lightweight Wiki using Markdown markup language, file storage and and PHP.
 
 ## Main Features
 1. [Pages](w/Page)
-2. [Sub Folder](w/Sub/Test.md)
+2. [Sub Folder (with .md extension)](w/Sub/Test.md)
+3. [Sub Folder](w/Sub/Test)
 
 ### Linking
 
